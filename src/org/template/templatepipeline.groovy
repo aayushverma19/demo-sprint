@@ -22,9 +22,3 @@ def call (String reportName, String branch, String repoUrl, String gitPassword){
   unit.call()
 
 }
-
-// import org.Java.unitTesting
-// def call () {
-//   unit = new unitTesting()
-//   unit.call()
-// }
