@@ -1,4 +1,4 @@
-package org.credScanning
+package org.genericCI
 
 def call(String reportName) {
     stage ('Cred Scanning'){
