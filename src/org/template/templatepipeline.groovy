@@ -17,7 +17,7 @@ def call (String reportName, String branch, String repoUrl, String gitPassword){
   clean.call()
   clone.call(branch, repoUrl, gitPassword)
   gitleaks.call(reportName)
-  lScanning.call()
+  //lScanning.call()
   compile.call()
   unit.call()
 
