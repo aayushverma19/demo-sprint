@@ -2,7 +2,7 @@ package org.template
 
 import org.common.*
 import org.genericCI.*
-import org.Java.* 
+import org.java.* 
 //import org.Java.codeCompile
 
 def call (String reportName, String branch, String repoUrl, String gitPassword){
