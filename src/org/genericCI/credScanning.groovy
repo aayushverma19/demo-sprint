@@ -1,4 +1,8 @@
+package org.credScanning
+
 def call(String reportName) {
-    sh "gitleaks detect -r ${reportName}"
-    archiveArtifacts artifacts: reportName, fingerprint: true
+    stage ('Cred Scanning'){
+        sh "gitleaks detect -r ${reportName}"
+    }
+   // archiveArtifacts artifacts: reportName, fingerprint: true
 }
