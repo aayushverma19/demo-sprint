@@ -1,6 +1,6 @@
 package org.genericCI
 
-def call(String project_api_key) {
+def call(String project_api_key, String reportFile) {
   stage ('License Scanning') {
         withCredentials([string(credentialsId: 'project_api_key', variable: 'FOSSA_KEY')]) { 
           sh """
