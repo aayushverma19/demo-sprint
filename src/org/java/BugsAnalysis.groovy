@@ -1,3 +1,4 @@
+package org.java
 def call(String projectKey, String credentialsId ) {
   stage ('bug')
     withSonarQubeEnv('sonar') { 
