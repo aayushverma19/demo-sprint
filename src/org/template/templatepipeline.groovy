@@ -25,7 +25,7 @@ def call (String reportName, String branch, String repoUrl, String gitPassword, 
   gitleaks.call(reportName)
   //lScanning.call(project_api_key, reportFile)
   compile.call()
-  bug.call(bugprojectKey, sonar_token)
+  //bug.call(bugprojectKey, sonar_token)
   unit.call()
   //dependency.call()
   staticode.call(staticprojectKey, sonar_token)
