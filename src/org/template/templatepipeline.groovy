@@ -14,11 +14,11 @@ def call (String reportName, String branch, String repoUrl, String gitPassword){
   gitleaks = new credScanning()
   lScanning = new licenseScanning()
   compile = new codeCompile()
-  //bug = new bugsAnalysis()
+  bug = new bugsAnalysis()
   unit = new unitTesting()
   dependency = new dependencyScan()
-  //staticode = new staticCode()
-  //DASTcheck = new dast()
+  staticode = new staticCode()
+  DASTcheck = new dast()
 
   
   clean.call()
