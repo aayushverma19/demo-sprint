@@ -6,7 +6,7 @@ import org.java.*
 //import org.Java.codeCompile
 
 def call (String reportName, String branch, String repoUrl, String gitPassword, String zapUrl, String zapReport, 
-          String bugprojectKey, String credentialsId, String staticprojectKey){
+          String bugprojectKey, String sonar_token, String staticprojectKey){
           
   clean = new cleanWS()
   clone = new gitclone()
@@ -25,11 +25,11 @@ def call (String reportName, String branch, String repoUrl, String gitPassword, 
   gitleaks.call(reportName)
   //lScanning.call()
   compile.call()
-  bug.call()
+  bug.call(bugprojectKey, sonar_token)
   unit.call()
   //dependency.call()
-  staticode.call()
-  DASTcheck.call()
+  staticode.call(staticprojectKey, sonar_token)
+  DASTcheck.call(zapUrl, zapReport)
   
 
 }
