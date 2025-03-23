@@ -11,8 +11,11 @@ def call (String reportName, String branch, String repoUrl, String gitPassword){
   gitleaks = new credScanning()
   lScanning = new licenseScanning()
   compile = new codeCompile()
+  bug = new BugsAnalysis()
   unit = new unitTesting()
   dependency = new dependencyScan()
+  staticode = new staticCode()
+  DAST = new dast()
 
   
   clean.call()
@@ -20,7 +23,11 @@ def call (String reportName, String branch, String repoUrl, String gitPassword){
   gitleaks.call(reportName)
   //lScanning.call()
   compile.call()
+  bug.call()
   unit.call()
-  dependency.call()
+  //dependency.call()
+  staticode.call()
+  DAST.call()
+  
 
 }
