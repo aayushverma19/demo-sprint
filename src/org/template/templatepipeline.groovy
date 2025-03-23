@@ -15,7 +15,7 @@ def call (String reportName, String branch, String repoUrl, String gitPassword){
   unit = new unitTesting()
   dependency = new dependencyScan()
   staticode = new staticCode()
-  DAST = new dast()
+  DASTcheck = new dast()
 
   
   clean.call()
@@ -27,7 +27,7 @@ def call (String reportName, String branch, String repoUrl, String gitPassword){
   unit.call()
   //dependency.call()
   staticode.call()
-  DAST.call()
+  DASTcheck.call()
   
 
 }
