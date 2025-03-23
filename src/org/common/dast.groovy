@@ -1,3 +1,4 @@
+package org.common
 def call(String zapUrl, String zapReport) {
   stage ('DAST') {
          script {
