@@ -17,7 +17,7 @@ def call (String reportName, String branch, String repoUrl, String gitPassword, 
   unit = new unitTesting()
   dependency = new dependencyScan()
   //staticode = new staticCode()
-  DASTcheck = new dast()
+  //DASTcheck = new dast()
 
   
   clean.call()
