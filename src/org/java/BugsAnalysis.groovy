@@ -1,6 +1,6 @@
 package org.java
 def call(String projectKey, String credentialsId ) {
-  stage ('bug')
+  stage ('Bugs Analysis')
     withSonarQubeEnv('sonar') { 
         withCredentials([string(credentialsId: credentialsId, variable: 'SONARQUBE_TOKEN')]) {
             sh """
