@@ -7,6 +7,7 @@ import org.java.*
 
 def call (String reportName, String branch, String repoUrl, String gitPassword, String zapUrl, String zapReport, 
           String bugprojectKey, String credentialsId, String staticprojectKey){
+          
   clean = new cleanWS()
   clone = new gitclone()
   gitleaks = new credScanning()
