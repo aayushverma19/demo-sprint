@@ -12,6 +12,7 @@ def call (String reportName, String branch, String repoUrl, String gitPassword){
   lScanning = new licenseScanning()
   compile = new codeCompile()
   unit = new unitTesting()
+  dependency = new dependencyScan()
 
   
   clean.call()
@@ -20,5 +21,6 @@ def call (String reportName, String branch, String repoUrl, String gitPassword){
   //lScanning.call()
   compile.call()
   unit.call()
+  dependency.call()
 
 }
