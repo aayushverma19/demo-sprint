@@ -5,7 +5,7 @@ import org.genericCI.*
 import org.java.* 
 //import org.Java.codeCompile
 
-def call (String reportName, String branch, String repoUrl, String gitPassword, String bugprojectKey, String sonar_token){
+def call (String reportName, String branch, String repoUrl, String gitPassword, String bugprojectKey, String sonar_token, String staticprojectKey){
 //def call (String reportName, String branch, String repoUrl, String gitPassword, String zapUrl, String zapReport, 
  //         String bugprojectKey, String sonar_token, String staticprojectKey, String project_api_key, String reportFile){
           
@@ -29,7 +29,7 @@ def call (String reportName, String branch, String repoUrl, String gitPassword, 
   bug.call(bugprojectKey, sonar_token)
   unit.call()
   //dependency.call()
-  //staticode.call(staticprojectKey, sonar_token)
+  staticode.call(staticprojectKey, sonar_token)
   //DASTcheck.call(zapUrl, zapReport)
   
 
