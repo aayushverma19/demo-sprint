@@ -1,0 +1,4 @@
+def call() {
+  stage ('Dependency Check')
+        sh 'mvn org.owasp:dependency-check-maven:check || true'
+    }
