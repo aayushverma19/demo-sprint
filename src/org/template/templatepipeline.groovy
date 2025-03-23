@@ -28,8 +28,8 @@ def call (String reportName, String branch, String repoUrl, String gitPassword, 
   //bug.call(bugprojectKey, sonar_token)
   unit.call()
   //dependency.call()
-  staticode.call(staticprojectKey, sonar_token)
-  DASTcheck.call(zapUrl, zapReport)
+  //staticode.call(staticprojectKey, sonar_token)
+  //DASTcheck.call(zapUrl, zapReport)
   
 
 }
