@@ -1,6 +1,6 @@
 package org.template
 
-import org.common.*
+import org.common.cleanWS
 import org.common.*
 import org.genericCI.*
 import org.java.*
