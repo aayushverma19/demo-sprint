@@ -1,8 +1,8 @@
 package org.template
 
-import org.commom.cleanWS
-import org.commom.gitclone
-import org.generic.credScanning
+import org.common.cleanWS
+import org.common.gitclone
+import org.genericCI.credScanning
 import org.java.codeCompile
 import org.java.unitTesting
 
