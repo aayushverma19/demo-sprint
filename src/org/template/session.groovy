@@ -1,11 +1,12 @@
 package org.template
 
-import org.commom.*
-import org.generic.*
-import org.java.*
-//import org.java.codeCompile
+import org.commom.cleanWS
+import org.commom.gitclone
+import org.generic.credScanning
+import org.java.codeCompile
+import org.java.unitTesting
 
-  def call (String reportName, String branch, String repoUrl, String gitPassword ){
+def call (String reportName, String branch, String repoUrl, String gitPassword ){
 
   clean = new cleanWS()
   clone = new gitclone()
