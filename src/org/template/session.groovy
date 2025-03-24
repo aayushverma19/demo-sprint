@@ -1,10 +1,10 @@
 package org.template
 
-import org.common.cleanWS
-import org.common.gitclone
-import org.genericCI.credScanning
-import org.java.codeCompile
-import org.java.unitTesting
+import org.common.*
+import org.common.*
+import org.genericCI.*
+import org.java.*
+import org.java.*
 
 def call (String reportName, String branch, String repoUrl, String gitPassword ){
 
