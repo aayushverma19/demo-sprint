@@ -8,7 +8,7 @@ import database.postgresql.*
     clone =  new gitclone()
     deployDB = new deploy()
 
-    clone(branch, repoUrl, gitPassword)
+    clone.cloneRepo(branch, repoUrl, gitPassword)
     deploydb(inventory_path, playbook_path, key_path)
 
   }
