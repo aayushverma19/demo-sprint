@@ -1,5 +1,5 @@
 package org.common
-def cloneRepo(String branch , String repoUrl, String credentials_Id, String version, String user_name) {
+def cloneRepo(String credentials_Id, String version, String user_name) {
         stage('Clone Repo'){
             script {
                     withCredentials([string(credentialsId: "${credentials_Id}", variable: 'TOKEN')]) {
