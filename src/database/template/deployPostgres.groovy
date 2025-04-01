@@ -9,6 +9,6 @@ import database.postgresql.*
     deployDB = new deploy()
 
     clone.cloneRepo(branch, repoUrl, gitPassword)
-    deploydb(inventory_path, playbook_path, key_path)
+    deploydb.ancibleExecute(inventory_path, playbook_path, key_path)
 
   }
