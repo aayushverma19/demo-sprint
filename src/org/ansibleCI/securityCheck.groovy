@@ -4,7 +4,7 @@ def call (String playbook_path){
     stage('Security Check'){
                     script {
                         catchError(buildResult: 'SUCCESS') {
-                        sh "ansible-later ${playbook_path} 2>&1 | tee Report-security.txt"
+                        sh "/var/lib/jenkins/.local/bin/ansible-later ${playbook_path} 2>&1 | tee Report-security.txt"
                   }
             }
       }
