@@ -1,3 +1,5 @@
+package org.ansibleCI
+
 def call (String playbook_path){
     stage('Security Check'){
                 steps {
