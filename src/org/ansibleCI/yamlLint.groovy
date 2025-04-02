@@ -1,6 +1,6 @@
 package org.ansibleCI
 
-def call (String playbook_path) {
+def call (String taskFile_path) {
   stage('YAML Syntax Check') {
               script {
                   catchError(buildResult: 'SUCCESS') {
