@@ -10,6 +10,6 @@ import database.postgresql.*
     deployDB = new deploy()
 
     clone.call(credentials_Id, version, user_name)
-    deploydb.ancibleExecute(inventory_path, playbook_path, key_path)
+    deploydb.call(inventory_path, playbook_path, key_path)
 
   }
