@@ -9,7 +9,7 @@ import database.postgresql.*
     clone =  new gitclone()
     deployDB = new deploy()
 
-    clone.cloneRepo(credentials_Id, version, user_name)
+    clone.call(credentials_Id, version, user_name)
     //deploydb.ancibleExecute(inventory_path, playbook_path, key_path)
 
   }
