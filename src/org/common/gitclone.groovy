@@ -1,6 +1,6 @@
 package org.common
 
-def call(String branch_name, String repo_url, String git_password)
+def call(String branch_name, String repo_url, String git_password) {
 
 stage('Clone Repo') {
           steps {
@@ -10,3 +10,4 @@ stage('Clone Repo') {
               ])
           }
       }
+}
