@@ -6,8 +6,8 @@ import org.common.*
 def call (String branch_name, String repo_url, String git_password, String playbook_path, String inventory_path, String key_path, String user_name) {
 
   clone = new gitclone()
-  yamllint = new yamllint()
-  ansiblelint = new ansiblelint()
+  yamllint = new yamlLint()
+  ansiblelint = new ansibleLint()
   securitycheck = new securityCheck()
   dryrun = new dryRun()
 
