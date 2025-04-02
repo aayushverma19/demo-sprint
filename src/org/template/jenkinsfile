@@ -1,0 +1,29 @@
+@Library('ansible@ansibleCI') _
+
+def ninja = new org.template.ansibleCitemplate()
+
+environment {
+        aws_access_key_id = credentials('AWS_ACCESS_KEY_ID')
+        aws_secret_access_key = credentials('AWS_SECRET_ACCESS_KEY')
+    }
+
+node{
+    try {
+            def playbook_path = 'Playbook/SonarQube/playbook.yaml'
+            def inventory_path = 'Playbook/SonarQube/aws_ec2.yml'
+            def key_path = '/var/lib/jenkins/Pem_key/snaatak.pem'
+            def email_recipients = "aayush.verma@mygurukulam.co"
+            def channel_name = 'jenkins'
+            def branch_name = 'Nikita-SCRUM-126'
+            def repo_url = 'https://github.com/snaatak-Zero-Downtime-Crew/ansible.git'
+            def git_password = 'git-cred'
+            def user_name = 'ubuntu'
+            
+            ninja.call(branch_name, repo_url, git_password, playbook_path, inventory_path, key_path, user_name)
+            
+        } 
+        finally {
+            archiveArtifacts artifacts: '*.txt', allowEmptyArchive: true
+        }
+    }
+
