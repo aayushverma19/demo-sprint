@@ -1,4 +1,4 @@
-package org.common
+package database.common
 def call(String credentials_Id, String version, String user_name) {
         stage('Clone Repo'){
             script {
