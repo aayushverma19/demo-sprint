@@ -46,24 +46,7 @@ pipelineJob('POC/CI-Checks/Declarative/Generic/License-Scanning') {
                     branch('*/Rohit-SCRUM-129') 
                 }
             }
-            scriptPath('CI/Generic/Declarative/License Scanning')
-        }
-    }
-}
-
-pipelineJob('POC/CI-Checks/Declarative/Generic/License-Scanning') {
-    definition {
-        cpsScm {
-            scm {
-                git {
-                    remote {
-                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
-                        credentials('git-cred') 
-                    }
-                    branch('*/Rohit-SCRUM-129') 
-                }
-            }
-            scriptPath('CI/Generic/Declarative/License Scanning')
+            scriptPath('CI/Generic/Declarative/License Scanning/Jenkinsfile')
         }
     }
 }
@@ -77,10 +60,10 @@ pipelineJob('POC/CI-Checks/Declarative/Generic/Notificaiton') {
                         url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
                         credentials('git-cred') 
                     }
-                    branch('*/Rohit-SCRUM-129') 
+                    branch('*/main') 
                 }
             }
-            scriptPath('CI/Generic/Declarative/Notificaiton')
+            scriptPath('CI/Generic/Declarative/Notification/Jenkinsfile')
         }
     }
 }
@@ -97,7 +80,7 @@ pipelineJob('POC/CI-Checks/Declarative/Generic/AMI') {
                     branch('*/Pravesh-SCRUM-131') 
                 }
             }
-            scriptPath('CI/Generic/Declarative/AMI')
+            scriptPath('CI/Generic/Declarative/AMI/Jenkinsfile')
         }
     }
 }
@@ -114,7 +97,7 @@ pipelineJob('POC/CI-Checks/Declarative/Generic/Commit-Sign-off') {
                     branch('*/main') 
                 }
             }
-            scriptPath('CI Implementation/Declarative Pipeline/Generic/Commit Sign-off')
+            scriptPath('CI Implementation/Declarative Pipeline/Generic/Commit Sign-off/Jenkinsfile')
         }
     }
 }
@@ -131,7 +114,7 @@ pipelineJob('POC/CI-Checks/Scripted/Generic/Cred-Scanning') {
                     branch('*/Nikita-SCRUM-133') 
                 }
             }
-            scriptPath('CI/Generic/Scripted/Cred Scanning')
+            scriptPath('CI/Generic/Scripted/Cred Scanning/Jenkinsfile')
         }
     }
 }
@@ -148,7 +131,78 @@ pipelineJob('POC/CI-Checks/Scripted/Generic/License-Scanning') {
                     branch('*/Mohit-SCRUM-134') 
                 }
             }
-            scriptPath('CI/Generic/Scripted/License Scanning')
+            scriptPath('CI/Generic/Scripted/License Scanning/Jenkinsfile')
+        }
+    }
+}
+
+
+pipelineJob('POC/CI-Checks/Scripted/Generic/Notificaiton') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Anuj-SCRUM-135') 
+                }
+            }
+            scriptPath('CI/Generic/Scripted/Notification/Jenkinsfile')
+        }
+    }
+}
+
+
+pipelineJob('POC/CI-Checks/Scripted/Generic/AMI') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('CI/Generic/Scripted/AMI/Jenkinsfile')
+        }
+    }
+}
+
+
+pipelineJob('POC/CI-Checks/Scripted/Generic/Commit-Sign-off') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('CI Implementation/Scripted Pipeline/Generic/Commit Sign-off/JenkinsFile')
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Scripted/Generic/AMI') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('CI/Generic/Scripted/AMI/Jenkinsfile')
         }
     }
 }
