@@ -10,6 +10,9 @@ folder('POC/CI-Checks/Generic') {
 folder('POC/CI-Checks/Applications') {
     displayName('Applications')
 }
+folder('POC/CI-Checks/Applications/API') {
+    displayName('API')
+}
 folder('POC/CI-Checks/Applications/Declarative') {
     displayName('Declarative')
 }
@@ -947,7 +950,7 @@ pipelineJob('POC/CI-Checks/Applications/Shared-Library/Python/Dependency-Scannin
 /////api
 
 
-pipelineJob('POC/CI-Checks/Applications/Shared-Library/Python/Dependency-Sscanning  ') {
+pipelineJob('POC/CI-Checks/Applications/API/Attendance') {
     definition {
         cpsScm {
             scm {
@@ -956,14 +959,48 @@ pipelineJob('POC/CI-Checks/Applications/Shared-Library/Python/Dependency-Sscanni
                         url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
                         credentials('git-cred') 
                     }
-                    branch('*/Ramatan-SCRUM-178') 
+                    branch('*/Pooja-SCRUM-197') 
                 }
             }
-            scriptPath('CI/Application/Shared_Library/Python/Dependency_scanning/Jenkinsfile') 
+            scriptPath('CI/Attendance API/Jenkinsfile') 
         }
     }
 }
 
+
+pipelineJob('POC/CI-Checks/Applications/API/Employee') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Nikita-SCRUM-198') 
+                }
+            }
+            scriptPath('CI/Employee API/Jenkinsfile') 
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Applications/API/Salary') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('CI/Salary_API/Jenkinsfile') 
+        }
+    }
+}
 
 
 
