@@ -904,7 +904,7 @@ pipelineJob('POC/CI-Checks/Applications/Shared-Library/Python/Bugs-Analysis') {
 }
 
 //################chanes pending
-pipelineJob('POC/CI-Checks/Applications/Shared-Library/Python/Unit-Testing ') {
+pipelineJob('POC/CI-Checks/Applications/Shared-Library/Python/Unit-Testing') {
     definition {
         cpsScm {
             scm {
@@ -920,6 +920,31 @@ pipelineJob('POC/CI-Checks/Applications/Shared-Library/Python/Unit-Testing ') {
         }
     }
 }
+
+
+pipelineJob('POC/CI-Checks/Applications/Shared-Library/Python/Dependency-Scanning') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Ramatan-SCRUM-178') 
+                }
+            }
+            scriptPath('CI/Application/Shared_Library/Python/Dependency_scanning/Jenkinsfile') 
+        }
+    }
+}
+
+
+
+
+
+
+/////api
 
 
 pipelineJob('POC/CI-Checks/Applications/Shared-Library/Python/Dependency-Sscanning  ') {
@@ -938,3 +963,7 @@ pipelineJob('POC/CI-Checks/Applications/Shared-Library/Python/Dependency-Sscanni
         }
     }
 }
+
+
+
+
