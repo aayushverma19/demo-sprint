@@ -10,8 +10,8 @@ folder('POC/CD/Ansible') {
 folder('POC/CD/Ansible/Declarative') {
      displayName('Declarative')
  }
-folder('POC/CD/Ansible/Declarative/Playbook') {
-     displayName('Playbook')
+folder('POC/CD/Ansible/Declarative') {
+     displayName('Declarative')
  }
  folder('POC/CI-Checks') {
      displayName('CI-Checks')
