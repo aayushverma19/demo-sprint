@@ -1,11 +1,32 @@
 folder('POC') {
      displayName('POC')
  }
+folder('CD') {
+     displayName('CD')
+ }
+folder('POC/CD/Ansible') {
+     displayName('Ansible')
+ }
+folder('POC/CD/Ansible/Declarative') {
+     displayName('Declarative')
+ }
+folder('POC/CD/Ansible/Declarative/Playbook') {
+     displayName('Playbook')
+ }
  folder('POC/CI-Checks') {
      displayName('CI-Checks')
  }
 folder('POC/CI-Checks/Generic') {
     displayName('Generic')
+}
+folder('POC/CI-Checks/Ansible') {
+    displayName('Ansible')
+}
+folder('POC/CI-Checks/Ansible/Declarative') {
+    displayName('Declarative')
+}
+folder('POC/CI-Checks/Ansible/Declarative/Playbook') {
+    displayName('Playbook')
 }
 folder('POC/CI-Checks/Applications') {
     displayName('Applications')
@@ -1002,5 +1023,42 @@ pipelineJob('POC/CI-Checks/Applications/API/Salary') {
     }
 }
 
+
+
+
+
+pipelineJob('POC/CI-Checks/Ansible/Declarative/Playbook') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('CI/Ansible/CI/Jenkinsfile') 
+        }
+    }
+}
+
+pipelineJob('POC/CD/Ansible/Declarative/Playbook') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('CD/Ansible/CD/Jenkinsfile') 
+        }
+    }
+}
 
 
