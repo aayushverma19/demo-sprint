@@ -1,14 +1,17 @@
-// folder('POC') {
-//     displayName('POC')
-// }
-// folder('POC/CI-Checks') {
-//     displayName('CI-Checks')
-// }
+folder('POC') {
+     displayName('POC')
+ }
+ folder('POC/CI-Checks') {
+     displayName('CI-Checks')
+ }
 folder('POC/CI-Checks/Generic') {
     displayName('Generic')
 }
-folder('POC/CI-Checks/Application') {
-    displayName('Application')
+folder('POC/CI-Checks/Applications') {
+    displayName('Applications')
+}
+folder('POC/CI-Checks/Applications/Declarative') {
+    displayName('Declarative')
 }
 folder('POC/CI-Checks/Generic/Declarative') {
     displayName('Declarative')
@@ -16,13 +19,16 @@ folder('POC/CI-Checks/Generic/Declarative') {
 folder('POC/CI-Checks/Generic/Scripted') {
     displayName('Scripted')
 }
-folder('POC/CI-Checks/Scripted/Generic') {
-    displayName('Generic')
-}
 folder('POC/CI-Checks/Generic/Shared-Library') {
     displayName('Shared-Library')
 }
-folder('POC/CI-Checks/Application/Declarative/Java') {
+folder('POC/CI-Checks/Applications/Declarative/Java') {
+    displayName('Java')
+}
+folder('POC/CI-Checks/Applications/Scripted') {
+    displayName('Scripted')
+}
+folder('POC/CI-Checks/Applications/Scripted/Java') {
     displayName('Java')
 }
 
@@ -284,7 +290,7 @@ pipelineJob('POC/CI-Checks/Generic/Shared-Library/Commit-Sign-off') {
 }
 //CI/Application/Declarative/Java/Code Compilation/Jenkinsfile
 
-pipelineJob('POC/CI-Checks/Application/Declarative/Java/Code-Compilation') {
+pipelineJob('POC/CI-Checks/Applications/Declarative/Java/Code-Compilation') {
     definition {
         cpsScm {
             scm {
@@ -301,7 +307,7 @@ pipelineJob('POC/CI-Checks/Application/Declarative/Java/Code-Compilation') {
     }
 }
 
-pipelineJob('POC/CI-Checks/Application/Declarative/Java/Static-Code-Analysis') {
+pipelineJob('POC/CI-Checks/Applications/Declarative/Java/Static-Code-Analysis') {
     definition {
         cpsScm {
             scm {
@@ -319,7 +325,7 @@ pipelineJob('POC/CI-Checks/Application/Declarative/Java/Static-Code-Analysis') {
 }
 
 
-pipelineJob('POC/CI-Checks/Application/Declarative/Java/Bugs-Analysis') {
+pipelineJob('POC/CI-Checks/Applications/Declarative/Java/Bugs-Analysis') {
     definition {
         cpsScm {
             scm {
@@ -337,7 +343,7 @@ pipelineJob('POC/CI-Checks/Application/Declarative/Java/Bugs-Analysis') {
 }
 
 
-pipelineJob('POC/CI-Checks/Application/Declarative/Java/Unit-Testing') {
+pipelineJob('POC/CI-Checks/Applications/Declarative/Java/Unit-Testing') {
     definition {
         cpsScm {
             scm {
@@ -355,7 +361,7 @@ pipelineJob('POC/CI-Checks/Application/Declarative/Java/Unit-Testing') {
 }
 
 
-pipelineJob('POC/CI-Checks/Application/Declarative/Java/DAST') {
+pipelineJob('POC/CI-Checks/Applications/Declarative/Java/DAST') {
     definition {
         cpsScm {
             scm {
@@ -368,6 +374,127 @@ pipelineJob('POC/CI-Checks/Application/Declarative/Java/DAST') {
                 }
             }
             scriptPath('CI/Application/Declarative/Java/DAST/Jenkinsfile')
+        }
+    }
+}
+
+//check script
+
+pipelineJob('POC/CI-Checks/Applications/Declarative/Java/Dependency-Scanning') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Nikita-SCRUM-148') 
+                }
+            }
+            scriptPath('CI/Application/Declarative/Java/Dependency scanning/Jenkinsfile')
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Applications/Scripted/Java/Code-compilation') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Mohit-SCRUM-149') 
+                }
+            }
+            scriptPath('CI/Application/Scripted/Java/Code Compilation/Jenkinsfile')
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Applications/Scripted/Java/Static-Code-Analysis') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('CI/Application/Scripted/Java/Static Code Analysis/Jenkinsfile')
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Applications/Scripted/Java/Bugs-Analysis') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Rohit-SCRUM-151') 
+                }
+            }
+            scriptPath('CI/Application/Scripted/Java/Bug Analysis/Jenkinsfile')
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Applications/Scripted/Java/Unit-Testing') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('CI/Application/Scripted/Java/Unit Testing/Jenkinsfile')
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Applications/Scripted/Java/DAST') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Pravesh-SCRUM-153') 
+                }
+            }
+            scriptPath('CI/Application/Scripted/Java/DAST/Jenkinsfile')
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Applications/Scripted/Java/Dependency-Scanning') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('CI/Application/Scripted/Java /Dependency scanning/Jenkinsfile')
         }
     }
 }
