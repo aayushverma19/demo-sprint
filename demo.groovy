@@ -7,6 +7,9 @@
 folder('POC/CI-Checks/Declarative') {
     displayName('Declarative')
 }
+folder('POC/CI-Checks/Application') {
+    displayName('Application')
+}
 folder('POC/CI-Checks/Declarative/Generic') {
     displayName('Generic')
 }
