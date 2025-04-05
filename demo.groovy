@@ -16,6 +16,9 @@ folder('POC/CI-Checks/Scripted') {
 folder('POC/CI-Checks/Scripted/Generic') {
     displayName('Generic')
 }
+folder('POC/CI-Checks/Shared-Library/Generic') {
+    displayName('Generic')
+}
 
 pipelineJob('POC/CI-Checks/Declarative/Generic/Cred-Scanning') {
     definition {
@@ -206,4 +209,74 @@ pipelineJob('POC/CI-Checks/Scripted/Generic/AMI') {
         }
     }
 }
+
+pipelineJob('POC/CI-Checks/Shared-Library/Generic/Cred-Scanning') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Rohit-SCRUM-138') 
+                }
+            }
+            scriptPath('Shared_Library/CI/Generic/Credentials_ Scanning/Jenkinsfile')
+        }
+    }
+}
+pipelineJob('POC/CI-Checks/Shared-Library/Generic/Commit-Sign-off') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Ramratan-SCRUM-139') 
+                }
+            }
+            scriptPath('jenkinsfile')
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Shared-Library/Generic/Cred-Scanning') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('jenkinsfile')
+        }
+    }
+}
+pipelineJob('POC/CI-Checks/Shared-Library/Generic/Commit-Sign-off') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('jenkinsfile')
+        }
+    }
+}
+
+
+
+
 
