@@ -27,7 +27,7 @@ folder('POC/CI-Checks/Application/Declarative/Java') {
 }
 
 
-pipelineJob('POC/CI-Checks/Declarative/Generic/Cred-Scanning') {
+pipelineJob('POC/CI-Checks/Generic/Declarative/Cred-Scanning') {
     definition {
         cpsScm {
             scm {
@@ -44,7 +44,7 @@ pipelineJob('POC/CI-Checks/Declarative/Generic/Cred-Scanning') {
     }
 }
 
-pipelineJob('POC/CI-Checks/Declarative/Generic/License-Scanning') {
+pipelineJob('POC/CI-Checks/Generic/Declarative/License-Scanning') {
     definition {
         cpsScm {
             scm {
@@ -61,7 +61,7 @@ pipelineJob('POC/CI-Checks/Declarative/Generic/License-Scanning') {
     }
 }
 
-pipelineJob('POC/CI-Checks/Declarative/Generic/Notificaiton') {
+pipelineJob('POC/CI-Checks/Generic/Declarative/Notificaiton') {
     definition {
         cpsScm {
             scm {
@@ -78,7 +78,7 @@ pipelineJob('POC/CI-Checks/Declarative/Generic/Notificaiton') {
     }
 }
 
-pipelineJob('POC/CI-Checks/Declarative/Generic/AMI') {
+pipelineJob('POC/CI-Checks/Generic/Declarative/AMI') {
     definition {
         cpsScm {
             scm {
@@ -95,7 +95,7 @@ pipelineJob('POC/CI-Checks/Declarative/Generic/AMI') {
     }
 }
 
-pipelineJob('POC/CI-Checks/Declarative/Generic/Commit-Sign-off') {
+pipelineJob('POC/CI-Checks/Generic/Declarative/Commit-Sign-off') {
     definition {
         cpsScm {
             scm {
@@ -112,7 +112,7 @@ pipelineJob('POC/CI-Checks/Declarative/Generic/Commit-Sign-off') {
     }
 }
 
-pipelineJob('POC/CI-Checks/Scripted/Generic/Cred-Scanning') {
+pipelineJob('POC/CI-Checks/Generic/Scripted/Cred-Scanning') {
     definition {
         cpsScm {
             scm {
@@ -129,7 +129,7 @@ pipelineJob('POC/CI-Checks/Scripted/Generic/Cred-Scanning') {
     }
 }
 
-pipelineJob('POC/CI-Checks/Scripted/Generic/License-Scanning') {
+pipelineJob('POC/CI-Checks/Generic/Scripted/License-Scanning') {
     definition {
         cpsScm {
             scm {
@@ -147,7 +147,7 @@ pipelineJob('POC/CI-Checks/Scripted/Generic/License-Scanning') {
 }
 
 
-pipelineJob('POC/CI-Checks/Scripted/Generic/Notificaiton') {
+pipelineJob('POC/CI-Checks/Generic/Scripted/Notificaiton') {
     definition {
         cpsScm {
             scm {
@@ -165,7 +165,7 @@ pipelineJob('POC/CI-Checks/Scripted/Generic/Notificaiton') {
 }
 
 
-pipelineJob('POC/CI-Checks/Scripted/Generic/AMI') {
+pipelineJob('POC/CI-Checks/Generic/Scripted/AMI') {
     definition {
         cpsScm {
             scm {
@@ -183,7 +183,7 @@ pipelineJob('POC/CI-Checks/Scripted/Generic/AMI') {
 }
 
 
-pipelineJob('POC/CI-Checks/Scripted/Generic/Commit-Sign-off') {
+pipelineJob('POC/CI-Checks/Generic/Scripted/Commit-Sign-off') {
     definition {
         cpsScm {
             scm {
@@ -200,7 +200,7 @@ pipelineJob('POC/CI-Checks/Scripted/Generic/Commit-Sign-off') {
     }
 }
 
-pipelineJob('POC/CI-Checks/Scripted/Generic/AMI') {
+pipelineJob('POC/CI-Checks/Generic/Scripted/AMI') {
     definition {
         cpsScm {
             scm {
@@ -217,7 +217,7 @@ pipelineJob('POC/CI-Checks/Scripted/Generic/AMI') {
     }
 }
 
-pipelineJob('POC/CI-Checks/Shared-Library/Generic/Cred-Scanning') {
+pipelineJob('POC/CI-Checks/Generic/Shared-Library/Cred-Scanning') {
     definition {
         cpsScm {
             scm {
@@ -233,7 +233,7 @@ pipelineJob('POC/CI-Checks/Shared-Library/Generic/Cred-Scanning') {
         }
     }
 }
-pipelineJob('POC/CI-Checks/Shared-Library/Generic/Licence-Scanning ') {
+pipelineJob('POC/CI-Checks/Generic/Shared-Library/Licence-Scanning ') {
     definition {
         cpsScm {
             scm {
@@ -250,7 +250,7 @@ pipelineJob('POC/CI-Checks/Shared-Library/Generic/Licence-Scanning ') {
     }
 }
 
-pipelineJob('POC/CI-Checks/Shared-Library/Generic/Notificaiton') {
+pipelineJob('POC/CI-Checks/Generic/Shared-Library/Notificaiton') {
     definition {
         cpsScm {
             scm {
@@ -266,7 +266,7 @@ pipelineJob('POC/CI-Checks/Shared-Library/Generic/Notificaiton') {
         }
     }
 }
-pipelineJob('POC/CI-Checks/Shared-Library/Generic/Commit-Sign-off') {
+pipelineJob('POC/CI-Checks/Generic/Shared-Library/Commit-Sign-off') {
     definition {
         cpsScm {
             scm {
