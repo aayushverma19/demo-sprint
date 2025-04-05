@@ -742,7 +742,7 @@ pipelineJob('POC/CI-Checks/Applications/Declarative/Python/DAST') {
     }
 }
 
-pipelineJob('POC/CI-Checks/Applications/Declarative/Python/Dependency-Scanning ') {
+pipelineJob('POC/CI-Checks/Applications/Declarative/Python/Dependency-Scanning') {
     definition {
         cpsScm {
             scm {
@@ -1054,5 +1054,3 @@ pipelineJob('POC/CD/Ansible/Declarative/Playbook') {
         }
     }
 }
-
-
