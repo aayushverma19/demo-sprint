@@ -10,9 +10,6 @@ folder('POC/CD/Ansible') {
 folder('POC/CD/Ansible/Declarative') {
      displayName('Declarative')
  }
-folder('POC/CD/Ansible/Declarative') {
-     displayName('Declarative')
- }
  folder('POC/CI-Checks') {
      displayName('CI-Checks')
  }
@@ -24,9 +21,6 @@ folder('POC/CI-Checks/Ansible') {
 }
 folder('POC/CI-Checks/Ansible/Declarative') {
     displayName('Declarative')
-}
-folder('POC/CI-Checks/Ansible/Declarative/Playbook') {
-    displayName('Playbook')
 }
 folder('POC/CI-Checks/Applications') {
     displayName('Applications')
