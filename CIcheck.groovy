@@ -37,6 +37,15 @@ folder('POC/CI-Checks/Applications/Shared-Library') {
 folder('POC/CI-Checks/Applications/Shared-Library/Java') {
     displayName('Java')
 }
+folder('POC/CI-Checks/Applications/Declarative/Python') {
+    displayName('Python')
+}
+folder('POC/CI-Checks/Applications/Scripted/Python') {
+    displayName('Python')
+}
+folder('POC/CI-Checks/Applications/Shared-Library/Python') {
+    displayName('Python')
+}
 
 pipelineJob('POC/CI-Checks/Generic/Declarative/Cred-Scanning') {
     definition {
@@ -400,9 +409,6 @@ pipelineJob('POC/CI-Checks/Applications/Declarative/Java/DAST') {
         }
     }
 }
-
-//check script
-
 pipelineJob('POC/CI-Checks/Applications/Declarative/Java/Dependency-Scanning') {
     definition {
         cpsScm {
@@ -625,4 +631,222 @@ pipelineJob('POC/CI-Checks/Applications/Shared-Library/Java/Dependency-Scanning'
         }
     }
 }
+
+
+//check complete
+
+
+//POC/CI-Checks/Applications/Declarative/Python
+
+pipelineJob('POC/CI-Checks/Applications/Declarative/Python/Code-Coverage') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('CI/Application/Declarative/Python/Code coverage/Jenkins') //####################### check
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Applications/Declarative/Python/Static-Code-Analysis') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('CI/Application/Declarative/Python/Static Code Analysis/Jenkinsfile') 
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Applications/Declarative/Python/Bugs-Analysis') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('CI/Application/Declerative/Python/Bug analysis/Jenkinsfile') 
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Applications/Declarative/Python/Unit-Testing') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Nikita-SCRUM-164') 
+                }
+            }
+            scriptPath('CI/Application/Declarative/Python/Unit Testing/Jenkinsfile') 
+        }
+    }
+}
+
+
+pipelineJob('POC/CI-Checks/Applications/Declarative/Python/DAST') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Mohit-SCRUM-165') 
+                }
+            }
+            scriptPath('CI/Application/Declarative/Python/DAST/Jenkinsfile') 
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Applications/Declarative/Python/Dependency-Scanning ') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Anuj-SCRUM-166') 
+                }
+            }
+            scriptPath('CI/Declarative/Python/Dependency scanning/Jenkinsfile') 
+        }
+    }
+}
+
+//POC/CI-Checks/Applications/Scripted/Python
+
+
+pipelineJob('POC/CI-Checks/Applications/Scripted/Python/Code-Coverage') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('CI/Application/Scripted/Python/Code Coverage/Jenkinsfile') 
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Applications/Scripted/Python/Static-Code-Analysis') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Rohit-SCRUM-168') 
+                }
+            }
+            scriptPath('CI/Application/Scripted/Python/Static Code Analysis/Jenkinsfile') 
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Applications/Scripted/Python/Bug-Analysis') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Anuj-SCRUM-169') 
+                }
+            }
+            scriptPath('CI/Application/Scripted/Python/Bug Analysis/JenkinsFile') 
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Applications/Scripted/Python/Unit-Testing') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('CI/Application/Scripted/Python/Unit Testing/Jenkinsfile') 
+        }
+    }
+}
+
+
+pipelineJob('POC/CI-Checks/Applications/Scripted/Python/DAST') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Pravesh-SCRUM-171') 
+                }
+            }
+            scriptPath('CI/Application/Scripted/Python/DAST/Jenkinsfile') 
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Applications/Scripted/Python/Dependency-Scanning') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('CI/Application/Scripted/Python/Dependency scanning/Jenkinsfile') 
+        }
+    }
+}
+
+//POC/CI-Checks/Applications/Shared-Library/Python
+
 
