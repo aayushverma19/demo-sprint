@@ -31,7 +31,12 @@ folder('POC/CI-Checks/Applications/Scripted') {
 folder('POC/CI-Checks/Applications/Scripted/Java') {
     displayName('Java')
 }
-
+folder('POC/CI-Checks/Applications/Shared-Library') {
+    displayName('Shared-Library')
+}
+folder('POC/CI-Checks/Applications/Shared-Library/Java') {
+    displayName('Java')
+}
 
 pipelineJob('POC/CI-Checks/Generic/Declarative/Cred-Scanning') {
     definition {
@@ -272,6 +277,24 @@ pipelineJob('POC/CI-Checks/Generic/Shared-Library/Notificaiton') {
         }
     }
 }
+
+pipelineJob('POC/CI-Checks/Generic/Shared-Library/AMI') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('CI/Generic/shared-library/AMI/Jenkinsfile')
+        }
+    }
+}
+
 pipelineJob('POC/CI-Checks/Generic/Shared-Library/Commit-Sign-off') {
     definition {
         cpsScm {
@@ -498,3 +521,108 @@ pipelineJob('POC/CI-Checks/Applications/Scripted/Java/Dependency-Scanning') {
         }
     }
 }
+
+pipelineJob('POC/CI-Checks/Applications/Shared-Library/Java/Code-compilation') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Nikita-SCRUM-155') 
+                }
+            }
+            scriptPath('CI/Application/Shared Library/Java/Code compilation/Jenkinsfile')
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Applications/Shared-Library/Java/Static-Code-Analysis') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Mohit-SCRUM-156') 
+                }
+            }
+            scriptPath('CI/Application/Shared Library/Java/Static Code Analysis/Jenkinsfile')
+        }
+    }
+}
+
+
+pipelineJob('POC/CI-Checks/Applications/Shared-Library/Java/Bugs-Analysis') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/shared-library.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Anuj-Scrum-157') 
+                }
+            }
+            scriptPath('jenkinsfile')
+        }
+    }
+}
+
+
+pipelineJob('POC/CI-Checks/Applications/Shared-Library/Java/Unit-Testing') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Aayush-SCRUM-158') 
+                }
+            }
+            scriptPath('CI/Application/Shared Library/Java/Unit Testing/Jenkinsfile')
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Applications/Shared-Library/Java/DAST') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('CI/Application/Shared Library/Java/DAST/Jenkinsfile')
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Applications/Shared-Library/Java/Dependency-Scanning') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/shared-library.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Rohit-SCRUM-160') 
+                }
+            }
+            scriptPath('Jenkinsfile')
+        }
+    }
+}
+
