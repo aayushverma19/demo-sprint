@@ -10,9 +10,14 @@ folder('POC/CI-Checks/Declarative') {
 folder('POC/CI-Checks/Declarative/Generic') {
     displayName('Generic')
 }
+folder('POC/CI-Checks/Scripted') {
+    displayName('Scripted')
+}
+folder('POC/CI-Checks/Scripted/Generic') {
+    displayName('Generic')
+}
 
 pipelineJob('POC/CI-Checks/Declarative/Generic/Cred-Scanning') {
-    description("")
     definition {
         cpsScm {
             scm {
@@ -30,7 +35,6 @@ pipelineJob('POC/CI-Checks/Declarative/Generic/Cred-Scanning') {
 }
 
 pipelineJob('POC/CI-Checks/Declarative/Generic/License-Scanning') {
-    description("Pipeline job for provisioning PostgreSQL EC2 instance in the Dev environment")
     definition {
         cpsScm {
             scm {
@@ -48,7 +52,6 @@ pipelineJob('POC/CI-Checks/Declarative/Generic/License-Scanning') {
 }
 
 pipelineJob('POC/CI-Checks/Declarative/Generic/License-Scanning') {
-    description("Pipeline job for provisioning PostgreSQL EC2 instance in the Dev environment")
     definition {
         cpsScm {
             scm {
@@ -65,9 +68,7 @@ pipelineJob('POC/CI-Checks/Declarative/Generic/License-Scanning') {
     }
 }
 
-
 pipelineJob('POC/CI-Checks/Declarative/Generic/Notificaiton') {
-    description("Pipeline job for provisioning PostgreSQL EC2 instance in the Dev environment")
     definition {
         cpsScm {
             scm {
@@ -84,4 +85,71 @@ pipelineJob('POC/CI-Checks/Declarative/Generic/Notificaiton') {
     }
 }
 
+pipelineJob('POC/CI-Checks/Declarative/Generic/AMI') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Pravesh-SCRUM-131') 
+                }
+            }
+            scriptPath('CI/Generic/Declarative/AMI')
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Declarative/Generic/Commit-Sign-off') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/main') 
+                }
+            }
+            scriptPath('CI Implementation/Declarative Pipeline/Generic/Commit Sign-off')
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Scripted/Generic/Cred-Scanning') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Nikita-SCRUM-133') 
+                }
+            }
+            scriptPath('CI/Generic/Scripted/Cred Scanning')
+        }
+    }
+}
+
+pipelineJob('POC/CI-Checks/Scripted/Generic/License-Scanning') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Mohit-SCRUM-134') 
+                }
+            }
+            scriptPath('CI/Generic/Scripted/License Scanning')
+        }
+    }
+}
 
