@@ -11,7 +11,7 @@ folder('POC/CI-Checks/Application') {
     displayName('Application')
 }
 folder('POC/CI-Checks/Generic/Declarative') {
-    displayName('Generic')
+    displayName('Declarative')
 }
 folder('POC/CI-Checks/Generic/Scripted') {
     displayName('Scripted')
@@ -19,8 +19,8 @@ folder('POC/CI-Checks/Generic/Scripted') {
 folder('POC/CI-Checks/Scripted/Generic') {
     displayName('Generic')
 }
-folder('POC/CI-Checks/Shared-Library/Generic') {
-    displayName('Generic')
+folder('POC/CI-Checks/Generic/Shared-Library') {
+    displayName('Shared-Library')
 }
 folder('POC/CI-Checks/Application/Declarative/Java') {
     displayName('Java')
