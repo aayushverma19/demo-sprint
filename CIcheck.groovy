@@ -1,7 +1,7 @@
 folder('POC') {
      displayName('POC')
  }
-folder('CD') {
+folder('POC/CD') {
      displayName('CD')
  }
 folder('POC/CD/Ansible') {
