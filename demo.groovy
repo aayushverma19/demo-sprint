@@ -11,7 +11,7 @@ folder('POC/CI-Checks/Declarative/Generic') {
     displayName('Generic')
 }
 
-pipelineJob('POC/CI-Checks/Declarative/Generic/cred-scanning') {
+pipelineJob('POC/CI-Checks/Declarative/Generic/Cred-Scanning') {
     description("")
     definition {
         cpsScm {
@@ -29,7 +29,7 @@ pipelineJob('POC/CI-Checks/Declarative/Generic/cred-scanning') {
     }
 }
 
-pipelineJob('POC/CI-Checks/Declarative/Generic/License Scanning') {
+pipelineJob('POC/CI-Checks/Declarative/Generic/License-Scanning') {
     description("Pipeline job for provisioning PostgreSQL EC2 instance in the Dev environment")
     definition {
         cpsScm {
@@ -47,5 +47,41 @@ pipelineJob('POC/CI-Checks/Declarative/Generic/License Scanning') {
     }
 }
 
+pipelineJob('POC/CI-Checks/Declarative/Generic/License-Scanning') {
+    description("Pipeline job for provisioning PostgreSQL EC2 instance in the Dev environment")
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Rohit-SCRUM-129') 
+                }
+            }
+            scriptPath('CI/Generic/Declarative/License Scanning')
+        }
+    }
+}
+
+
+pipelineJob('POC/CI-Checks/Declarative/Generic/Notificaiton') {
+    description("Pipeline job for provisioning PostgreSQL EC2 instance in the Dev environment")
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
+                        credentials('git-cred') 
+                    }
+                    branch('*/Rohit-SCRUM-129') 
+                }
+            }
+            scriptPath('CI/Generic/Declarative/Notificaiton')
+        }
+    }
+}
 
 
