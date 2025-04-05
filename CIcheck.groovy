@@ -4,16 +4,16 @@
 // folder('POC/CI-Checks') {
 //     displayName('CI-Checks')
 // }
-folder('POC/CI-Checks/Declarative') {
-    displayName('Declarative')
+folder('POC/CI-Checks/Generic') {
+    displayName('Generic')
 }
 folder('POC/CI-Checks/Application') {
     displayName('Application')
 }
-folder('POC/CI-Checks/Declarative/Generic') {
+folder('POC/CI-Checks/Generic/Declarative') {
     displayName('Generic')
 }
-folder('POC/CI-Checks/Scripted') {
+folder('POC/CI-Checks/Generic/Scripted') {
     displayName('Scripted')
 }
 folder('POC/CI-Checks/Scripted/Generic') {
