@@ -669,11 +669,6 @@ pipelineJob('POC/CI-Checks/Applications/Shared-Library/Java/Dependency-Scanning'
 }
 
 
-//check complete
-
-
-//POC/CI-Checks/Applications/Declarative/Python
-
 pipelineJob('POC/CI-Checks/Applications/Declarative/Python/Code-Coverage') {
     definition {
         cpsScm {
@@ -683,10 +678,10 @@ pipelineJob('POC/CI-Checks/Applications/Declarative/Python/Code-Coverage') {
                         url('https://github.com/snaatak-Zero-Downtime-Crew/jenkins.git')
                         credentials('git-cred') 
                     }
-                    branch('*/main') 
+                    branch('*/Ramratan-SCRUM-161') 
                 }
             }
-            scriptPath('CI/Application/Declarative/Python/Code coverage/Jenkins') //####################### check
+            scriptPath('CI/Application/Declarative/Python/Code coverage/Jenkinsfile') 
         }
     }
 }
